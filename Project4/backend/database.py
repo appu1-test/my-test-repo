@@ -1,8 +1,6 @@
 import os
 import psycopg2
 
-#PostgreSql config
-#import pdb;pdb.set_trace()
 conn = psycopg2.connect(
     dbname="book_library",
     user="postgres",
@@ -10,12 +8,7 @@ conn = psycopg2.connect(
     host="localhost",
     port=5432
 )
-#conn = psycopg2.connect(host=os.environ.get('POSTGRES_HOST'),
-#   port=os.environ.get('POSTGRES_PORT'),
-#    user=os.environ.get('POSTGRES_USER'),
-#   password=os.environ.get('POSTGRES_PASS'),
-#   dbname=os.environ.get('POSTGRES_DB'))
-    
+
 cursor = conn.cursor()
 
 def get_all_data():
