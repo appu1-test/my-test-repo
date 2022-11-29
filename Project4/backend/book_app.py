@@ -1,5 +1,5 @@
 from flask import Flask, request, abort
-import database as database
+from Database import database
 from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
