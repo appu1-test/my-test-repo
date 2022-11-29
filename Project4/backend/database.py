@@ -1,7 +1,7 @@
 import os
 import psycopg2
 
-conn = psycopg2.connect(dbname="book_library",user="postgres",password="admin",host="localhost",port=5432)
+conn = psycopg2.connect (dbname="book_library",user="postgres",password="admin",host="localhost",port=5432)
 
 cursor = conn.cursor()
 
