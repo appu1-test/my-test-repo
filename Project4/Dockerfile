@@ -1,6 +1,5 @@
 FROM python:3.10.8
 
-RUN mkdir -p /app
 WORKDIR /app
 COPY requirements.txt .
 RUN pip3 install -r requirements.txt --src /usr/local/src
