@@ -8,4 +8,3 @@ CREATE TABLE books_data(
     format character varying,
     price double precision,
     isbn bigint);
-)
