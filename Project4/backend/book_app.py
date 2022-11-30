@@ -5,7 +5,7 @@ from flask_cors import CORS, cross_origin
 app = Flask(__name__)
 CORS(app)
 
-@app.get('/all')
+@app.get('/')
 def get_all_books():
     return database.get_all_data()
 
@@ -23,4 +23,7 @@ def get_book(book_id):
     if result == None:
         abort(404)
     return result
+
+if __name__=='__main__':
+    app.run(host='0.0.0.0',port=5000,debug=True)
 
