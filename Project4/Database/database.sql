@@ -1,5 +1,4 @@
 CREATE DATABASE book_library;
-USE book_library;
 
 CREATE TABLE books_data(
     name character varying,
