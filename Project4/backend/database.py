@@ -1,12 +1,15 @@
 import os
 import psycopg2
 
-conn = psycopg2.connect (dbname="book_library",user="postgres",password="admin",host="localhost",port=5432)
+conn = psycopg2.connect (
+    dbname="book_library",user="postgres",password="admin",host="10.52.238.4",port=5432)
 
 cursor = conn.cursor()
+print('Connecting to the PostgreSQL database...')
 
 def get_all_data():
     Query = "select * from books_data;"
+    print('querying book database')
     cursor.execute(Query)
     record_new= cursor.fetchall()
     results_new=[]
