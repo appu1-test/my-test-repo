@@ -1,13 +1,13 @@
 from flask import Flask, request, abort
-import database as database
 from flask_cors import CORS, cross_origin
+import database 
 
 app = Flask(__name__)
 CORS(app)
 
 @app.get('/')
 def get_all_books():
-    return database.get_all_data()
+    return __.get_all_data()
 
 @app.get('/search')
 def get_results():

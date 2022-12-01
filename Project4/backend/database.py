@@ -2,7 +2,7 @@ import os
 import psycopg2
 
 conn = psycopg2.connect (
-    dbname="book_library",user="postgres",password="admin",host="10.52.238.4",port=5432)
+    dbname="book_library",user="postgres",password="admin",host="localhost",port=5432)
 
 cursor = conn.cursor()
 print('Connecting to the PostgreSQL database...')
