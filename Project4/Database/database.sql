@@ -10,6 +10,6 @@ CREATE TABLE books_data(
     primary key isbn bigint);
 
 COPY books_data (name,isbn,image,category,author,price,format)
-FROM ‘new.csv’
-DELIMITER ‘,’
+FROM 'new.csv'
+DELIMITER ','
 CSV HEADER;
