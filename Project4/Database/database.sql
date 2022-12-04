@@ -7,4 +7,9 @@ CREATE TABLE books_data(
     author character varying,
     format character varying,
     price double precision,
-    isbn bigint);
+    primary key isbn bigint);
+
+COPY books_data (name,isbn,image,category,author,price,format)
+FROM ‘new.csv’
+DELIMITER ‘,’
+CSV HEADER;
