@@ -1,6 +1,6 @@
 CREATE DATABASE book_library;
 Connect book_library
-CREATE TABLE book_library.books_data(
+CREATE TABLE books_data(
     name character varying,
     image character varying,
     category character varying,
