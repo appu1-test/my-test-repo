@@ -1,5 +1,5 @@
 CREATE DATABASE book_library;
-
+connect book_library;
 CREATE TABLE book_library.books_data(
     name character varying,
     image character varying,
