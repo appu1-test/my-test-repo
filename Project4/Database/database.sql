@@ -10,7 +10,7 @@ CREATE TABLE books_data(
     isbn bigint,
     PRIMARY KEY (isbn));
 
-COPY books_data (name,isbn,image,category,author,price,format)
-FROM 'new.csv'
+Copy books_data (name,isbn,image,category,author,price,format)
+FROM '/home/ubuntu/my-test-repo/Project4/new.csv'
 DELIMITER ','
 CSV HEADER;
