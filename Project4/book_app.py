@@ -1,6 +1,6 @@
 from flask import Flask, request, abort
 from flask_cors import CORS, cross_origin
-from backend import database 
+import backend.database
 
 app = Flask(__name__)
 CORS(app)
