@@ -6,5 +6,6 @@ WORKDIR /app
 RUN pip3 install -r requirements.txt --src /usr/local/src
 COPY . /app
 #RUN apt-get -y install python3-pip
+#RUN pip install psycopg2-binary
 EXPOSE 5000
 CMD [ "python3", "book_app.py" ]
