@@ -21,7 +21,7 @@ class SearchForm extends React.Component {
 
     handleSubmit(event) {
         console.log(this)
-        fetch("ec2-3-73-154-202.eu-central-1.compute.amazonaws.com/search?" + new URLSearchParams({
+        fetch("http://3.73.154.202/search?" + new URLSearchParams({
             name: this.state.name,
             author: this.state.author
         }))
