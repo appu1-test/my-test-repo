@@ -1,16 +1,23 @@
 import React from "react";
-let table = undefined
+let search_table = undefined
 class SearchForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {name: '',
-                      author: ''};
-
+                      author: '',
+                    table: props.tableData,
+                allBooksTable: true};
+        
         this.handleChangeName = this.handleChangeName.bind(this);
         this.handleChangeAuthor = this.handleChangeAuthor.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        console.log(this.state)
     }
-
+    static getDerivedStateFromProps(props, state) {
+        console.log(props)
+         if (state.allBooksTable)
+        {return{table: props.tableData}}
+      }
     handleChangeName(event) {
         this.setState({name: event.target.value});
     }
@@ -21,7 +28,7 @@ class SearchForm extends React.Component {
 
     handleSubmit(event) {
         console.log(this)
-        fetch("book/search?" + new URLSearchParams({
+        fetch("http://localhost:5000/search?" + new URLSearchParams({
             name: this.state.name,
             author: this.state.author
         }))
@@ -35,7 +42,7 @@ class SearchForm extends React.Component {
         })
         .then(data => {
             console.log(data)
-            table= (
+            search_table= (
             <table>
             <thead>
             <tr>
@@ -59,7 +66,9 @@ class SearchForm extends React.Component {
             )
             console.log(this)
             // document.getElementById("data").innerHTML = "";
-             this.forceUpdate()
+             this.setState({table:search_table,
+                allBooksTable: false})
+            //  this.forceUpdate()
         //  let div= document.getElementById('data')
         //  div.appendChild(React.createElement(table))
         })
@@ -70,20 +79,22 @@ class SearchForm extends React.Component {
     }
 
     render() {
+         this.state.allBooksTable=true
         return (
             <div>
             <form onSubmit={this.handleSubmit}>
                 <label>
                     Name:
-                    <input type="text" value={this.state.name} onChange={this.handleChangeName} />
+                    <input type="text" value={this.state.name} onChange={this.handleChangeName} style={{"margin-right": "15px"}}  />
                 </label>
                 <label>
                     Author:
                     <input type="text" value={this.state.author} onChange={this.handleChangeAuthor} />
                 </label>
-                <input type="submit" value="Search" />
+                <br/>
+                <input type="submit" value="Search" style={{"margin-top": "20px","margin-bottom": "20px"}}/>
             </form>
-            <div id = "search_data"> {table} </div>
+            <div id = "search_data"> {this.state.table} </div>
             </div>
         );
     }

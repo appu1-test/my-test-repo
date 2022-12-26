@@ -5,7 +5,7 @@ import SearchForm from './SearchForm'
 let table=undefined
 class App extends React.Component {
   clickme(that){
-    fetch("book")
+    fetch("http://localhost:5000")
     .then(response => {
       if (!response.ok){
         alert ("Could not fetch data") 
@@ -54,6 +54,7 @@ class App extends React.Component {
        "border": "1px solid black",
        "borderCollapse": "collapse"
     }
+    document.body.style = 'background: #e9abef;'
     return(
       <div>
         <style>{`
@@ -63,11 +64,8 @@ class App extends React.Component {
           }
         `}</style>
         <h1>Book Library</h1>
-        <button onClick={() => this.clickme(this)}>All Books</button>
-        <SearchForm></SearchForm>
-        <div id = 'data'>
-          {table}
-        </div>
+        <button onClick={() => this.clickme(this)} style={{"margin-bottom": "20px"}}>All Books</button>
+        <SearchForm tableData={table}></SearchForm>
       </div>  
     );
   }
