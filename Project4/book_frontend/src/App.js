@@ -5,7 +5,7 @@ import SearchForm from './SearchForm'
 let table=undefined
 class App extends React.Component {
   clickme(that){
-    fetch("http://ec2-3-74-231-77.eu-central-1.compute.amazonaws.com:5000")
+    fetch("ec2-3-69-151-96.eu-central-1.compute.amazonaws.com:5000")
     .then(response => {
       if (!response.ok){
         alert ("Could not fetch data") 
