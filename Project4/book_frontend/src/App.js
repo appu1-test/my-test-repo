@@ -5,7 +5,7 @@ import SearchForm from './SearchForm'
 let table=undefined
 class App extends React.Component {
   clickme(that){
-    var data = require('/etc/new')
+    var data = require('/Project/etc/new')
     console.log(data)
     fetch("data.ipaddress")
     .then(response => {
