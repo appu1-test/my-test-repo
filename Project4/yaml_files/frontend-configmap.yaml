@@ -1,0 +1,6 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: frontend-cm
+data:
+  ipaddress: http://ec2-3-73-44-208.eu-central-1.compute.amazonaws.com:5000/
