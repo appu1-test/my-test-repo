@@ -25,7 +25,7 @@ spec:
       volumes:
         - name: my-frontend
           configMap:
-            name: frontend-config
+            name: my-config
 ---
 apiVersion: v1
 kind: Service
