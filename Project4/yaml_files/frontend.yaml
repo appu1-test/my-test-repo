@@ -19,13 +19,6 @@ spec:
           image: docker.io/iwikil/my_frontend:v4
           ports:
             - containerPort: 3000
-          volumeMounts:
-            - name: my-frontend
-              mountPath: /etc/new
-      volumes:
-        - name: my-frontend
-          configMap:
-            name: my-config
 ---
 apiVersion: v1
 kind: Service
